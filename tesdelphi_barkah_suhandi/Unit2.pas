@@ -1,0 +1,53 @@
+unit Unit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls;
+
+type
+  TForm2 = class(TForm)
+    Button1: TButton;
+    Edit1: TEdit;
+    ListBox1: TListBox;
+    Label1: TLabel;
+    StatusBar1: TStatusBar;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+
+var  a,b,c,d,e,f : integer;
+begin
+
+  ListBox1.Items.Clear;
+  a:=StrToInt(edit1.Text);
+  b:=0;
+  c:=1;
+  d:=0;
+  e:=1;
+  ListBox1.Items.Add('bilangan fibonacci ke '+ IntToSTr(e)+' = '+IntToStr(b));
+  while d < a do
+  begin
+  e:=e+1;
+     b:=b+c;
+     ListBox1.Items.Add('bilangan fibonacci ke '+ IntToSTr(e)+' = '+IntToStr(b));
+     c:=b-c;
+     d:=d+1;
+
+end;
+end;
+
+end.
